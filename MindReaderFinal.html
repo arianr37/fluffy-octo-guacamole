@@ -1,0 +1,251 @@
+
+<html>
+
+<head>
+<style type="text/css">
+
+html {
+	background: url(background.jpg) repeat-x #2fbeea;
+	}
+
+body {
+	text-shadow: 0px 1px 1px #616161;
+	filter: dropshadow(color=#616161, offx=0, offy=1);
+	line-height:2em;
+	}
+	
+#wrapper {
+	width: 600px;
+	margin: 10px auto;
+	}
+
+.credit {
+	position: absolute; 
+	bottom:5px; 
+	right:50px;
+	font-size:14px;
+	color:#fff;
+	letter-spacing: -1pt;
+	text-align:right;
+	font-weight:bold;
+	}
+
+	.credit a {text-decoration: none; color:#333; text-style:italic;}
+	.credit a:hover {color:#0FF}
+
+	.steps {font-size:18px; text-align:center; margin-top:30px;}
+
+
+h1 {
+	font-family: helvetica, sans-serif;
+	font-size: 110px;
+	font-weight: bold;
+	letter-spacing: -7pt;
+	line-height: 0.8;
+	text-align:center;
+	margin: 50px auto;
+}
+
+
+div
+{
+font-family: helvetica, sans-serif;
+font-size: 30px;
+}
+
+
+#ansdisplay {
+font-family: Helvetica;
+font-size: 170pt;
+color: #FFFFFF;
+background-color: transparent !important;
+border: 0px;
+margin: 20px 0px 0px 130px;
+}
+
+
+#Convert1, #convert2, #convert3, #convert4, #convert5 {
+	margin:  0px auto;
+   border-top: 1px solid #fff;
+   background: #FC3;
+   background: -webkit-gradient(linear, left top, left bottom, from(#FC0), to(#F90));
+   background: -webkit-linear-gradient(top, #FC0, #F90);
+   background: -moz-linear-gradient(top, #FC0, #F90);
+   background: -ms-linear-gradient(top, #FC0, #F90);
+   background: -o-linear-gradient(top, #FC0, #F90);
+   padding: 10px 40px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   border-radius: 10px;
+   color: #333333;
+   font-size: 23px;
+   font-family: Helvetica, sans-serif;
+   text-decoration: none;
+   vertical-align: middle;
+	font-size: 24px;
+}
+
+#Convert1:hover, #convert2:hover, #convert3:hover, #convert4:hover, #convert5:hover {
+   border-top-color: #e8a92a;
+   background: #e8a92a;
+   color: #000000;
+   }
+
+
+
+#espinput {
+      	position:relative;
+      	margin:0 auto;
+      	width:446px;
+      	height:60px;
+      	padding:0 0 0 20px;
+      	background:transparent url(https://s3.amazonaws.com/static.appsumo.com/35b16c7d8422fb12887403386d8de290420e86af/images/contest/bg-form.png) no-repeat;
+      	border:0px;
+      	color:#999;
+      	font-size:24px;
+      	line-height:30px;
+}
+
+   
+#crystalball {
+	width: 400px;
+	height: 400px;
+	background: url(http://rezaei.me/crystalball.gif) no-repeat;
+	background-size: 400px 420px;
+	margin: 0px auto;
+	}
+	
+.youchose {
+	color: white;
+	}
+	
+
+</style>
+
+	<title>Mind Reader</title>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script>
+		function esp() {		
+			var orig = document.espform.espinput.value;
+			var origArray = [orig.slice(0,1),orig.slice(1,2),orig.slice(2,3)];
+			var total = 0;
+				for(var i = 0; i < origArray.length; i++){
+					var thisVal = parseInt(origArray[i]);
+					if(!isNaN(thisVal)){
+						total += thisVal;
+ 					}
+		}
+		if (total > 0 && total < 9) {
+				var ans1 = (9 - total)
+				document.reveal.display.value = ans1;
+			} else if (total >= 9 && total < 18) {
+				var ans2 = (18 - total)
+				document.reveal.display.value = ans2;
+			} else if (total >= 18 && total < 27) {
+				var ans3 = (27 - total)
+				document.reveal.display.value = ans3;
+			} else if (total >= 27 && total < 36) {
+				var ans4 = (36 - total)
+				document.reveal.display.value = ans4;
+			} else if (total >= 36 && total < 45) {
+				var ans5 = (45 - total)
+				document.reveal.display.value = ans5;
+			} 			
+		}
+	</script>
+	
+</head>
+
+<body>
+
+
+<div id="wrapper"><!-- START WRAPPER-->
+
+<div id="mindreader"><h1>Mind Reader</h1></div>
+<div id="1">
+	<center>Want me to read your mind? <br />Grab a pencil and paper.<br /><br /><br />
+		<input type="Submit" id="Convert1" class="submit" value="Continue"></input></center>
+</div>
+
+<div id="2" style="display:none">
+	<center>Write down a random four digit number like 9485 or 3456...<br /><br />
+		<input type="Submit" id="Convert2" class="submit" value="Continue"></input><br /><p class="steps">Step 1 of 4</p></center>
+</div>
+
+<div id="3" style="display:none">
+	<center>Now scramble your number, so if you had 9485 you can make 4859<br /><br />
+		<input type="Submit" id="Convert3" class="submit" value="Continue"></input><br /><p class="steps">Step 2 of 4</p></center>
+</div>
+
+<div id="5" style="display:none">
+	<center>Now subtract the smaller number from the larger number, like 9485 - 4859 = 4626<br /><br />
+		<input type="Submit" id="Convert5" class="submit" value="Continue"></input><br /><p class="steps">Step 3 of 4</p></center>
+</div>
+
+<div id="4" style="display:none">
+	<center>Circle a digit from your new number, except zero because it's already a circle.<br /><br />Finally, put all the digits except the one you circled below and I will read your mind to see what number you circled.
+		<form method="POST" name="espform" onSubmit="esp(document.espform.espinput.value);return false;">
+		<br />
+		<input type="value" name="espform" id="espinput" placeholder="Enter your final number" value=""/><br /><br />
+		<input type="Submit" id="Convert4" name="espform" class="submit" value="Read My Mind" />
+		<br /><p class="steps">Step 4 of 4</p></center></form>
+</div>
+
+<div id="youchose" style="display:none;" class="youchose">
+	<center>
+	<p>Hmm... the number you chose is...</p>
+	</center>
+</div>
+
+
+<div id="crystalball" style="display:none;">
+
+<div id="6" style="display:none;">
+		<form method="POST" name="reveal">
+			<input type="text" name="display" id="ansdisplay" readonly="readonly" />
+		</form>
+</div>
+
+</div>
+
+<div id="share" style="display:none;" class="youchose">
+	<center><p>Crazy? Share with your friends<br /><br /><a href="javascript: window.location.reload()">Try Again!</a></p></center>
+</div>
+
+</div><!-- END WRAPPER-->
+
+<div class="credit">
+<p>created by <a href="http://rezaei.me/">Arian Rezaei</a></p>
+</div>
+
+<script>
+    $("#Convert1").click(function () {
+    	$("div#1").hide("slow");
+    	$("div#2").slideDown("fast");
+    });
+    $("#Convert2").click(function () {
+    	$("div#2").hide("slow");
+    	$("div#3").slideDown("fast");
+    });
+    $("#Convert3").click(function () {
+    	$("div#3").hide("slow");
+    	$("div#5").slideDown("fast");
+    });
+    $("#Convert5").click(function () {
+    	$("div#5").hide("slow");
+    	$("div#4").slideDown("fast");
+    });
+    $("#Convert4").click(function () {
+	    $("html").css("background", "#000000");
+    	$("div#4").slideUp("slow");
+    	$("div#mindreader").slideUp("slow");
+    	$("div#youchose").slideDown("fast");
+    	$("div#6").delay(2000).fadeTo(6000, 0.92);
+    	$("div#6").slideDown("fast");
+    	$("div#share").delay(5000).fadeIn(1200);
+    	$("div#share").slideDown("fast");
+    	$("div#crystalball").slideDown("fast");
+    });
+</script>
+</body>
+</html>
